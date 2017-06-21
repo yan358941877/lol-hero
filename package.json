@@ -1,0 +1,21 @@
+{
+  "name": "lol-hero",
+  "version": "1.0.0",
+  "description": "使用react技术栈构建英雄联盟展示页面",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "webpack-dev-server --no-inline",
+    "build": "cross-env NODE_ENV=production webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yan358941877/lol-hero.git"
+  },
+  "author": "闫鑫鑫",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yan358941877/lol-hero/issues"
+  },
+  "homepage": "https://github.com/yan358941877/lol-hero#readme"
+}
