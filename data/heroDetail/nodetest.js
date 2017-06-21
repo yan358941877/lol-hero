@@ -1,5 +1,5 @@
 const path = 'Aatrox';
-
+console.log(new Date());
 const hero = require('./'+path);
 // console.log(hero.data.lore)
 console.log(decodeURIComponent(hero.data.spells[0].name));
