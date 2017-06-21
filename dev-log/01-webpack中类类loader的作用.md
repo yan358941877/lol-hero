@@ -42,6 +42,14 @@ Extract text from bundle into a file.从bundle中提取出特定的text到一个
 ```
 
 上面的代码是webpack的一段配置代码，具体的作用是：首先经过html-loader：提取html代码，生成对应的js代码;然后经过extract-loader：抽取出这部分js代码，在抽取过程中，将html中的`<img>`中的图片的路径替换成新的图片路径(如果图片是本地图片的话),最后结果是抽取成为一段html文本;最后经过file-loader，在file-loader的查询字符串参数指定的位置生成新的html文件。
+
+
+只用 html-loader , 只会把 html 的 code 包在 js 里
+
+
+只用 file-loader , 只会把html文件的复制到指定的路径下,不会处理html中`<img>`元素的src属性(指向了开发路径下的一张图片，build后该路径会失效)
+
+因此必须在中间加入extract-loader的处理
 ---
 
 webpack resolver
