@@ -4,8 +4,6 @@ import { render } from 'react-dom'
 import './res/index.less'
 
 render(
-  <div>
-    sans-serif<p>serif</p>
-  </div>,
+  <h1>Hello World</h1>,
   document.getElementById('lolMountPoint')
 )
