@@ -30,8 +30,9 @@ module.exports = {
   devServer: {
     compress: true,
     historyApiFallback: true,
-    hot: false,
+    hot: true,
     hotOnly: false,
+    colors: true,
     contentBase: path.resolve(__dirname, 'public'),
     watchContentBase: false,
     watchOptions: {
@@ -92,6 +93,8 @@ module.exports = {
 
     new OpenBrowserPlugin({
       url: 'http://localhost:8080/webpack-dev-server/'
-    })
+    }),
+
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
