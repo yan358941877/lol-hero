@@ -1,0 +1,1 @@
+webpackJsonp([0],{288:function(e,t,n){"use strict";var l=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(l),u=n(115);n(487),(0,u.render)(o.default.createElement("h1",null,"Hello World, Hello React!!"),document.getElementById("lolMountPoint"))},487:function(e,t){},709:function(e,t,n){e.exports=n(288)}},[709]);

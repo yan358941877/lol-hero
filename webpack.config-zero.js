@@ -3,14 +3,13 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: {
     vendor: './src/vendor/index.js',
-    mb: ['./src/lol/index.jsx']
+    mb: ['./src/lol/index.jsx', './src/lol/index.html']
   },
 
   output: {
@@ -68,24 +67,20 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff2?)$/,
         use: ['file-loader?name=assets.fonts/[name].[ext']
       },
-      // {
-      //   test: /\.html$/,
-      //   use: [
-      //     'file-loader?name=[name].html',
-      //     'extract-loader',
-      //     'html-loader'
-      //   ]
-      // }
+      {
+        test: /\.html$/,
+        use: [
+          'file-loader?name=[name].html',
+          'extract-loader',
+          'html-loader'
+        ]
+      }
     ]
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       names: 'vendor'
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/lol/index.html')
     }),
 
     new webpack.ProvidePlugin({
