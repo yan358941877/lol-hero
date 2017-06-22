@@ -92,7 +92,7 @@ module.exports = {
     new ExtractTextPlugin('assets/css/[name].css'),
 
     new OpenBrowserPlugin({
-      url: 'http://localhost:8080/webpack-dev-server/'
+      url: 'http://localhost:8080'
     }),
 
     new webpack.HotModuleReplacementPlugin()
