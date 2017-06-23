@@ -1,8 +1,18 @@
 @import "mixins.less";
 @import "utf-codes.less";
 // 定义字体
+// 等价于
+// @font-face {
+//   font-family: 'Octicons Regular';
+//   src: url("octicons.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 @font-face {
-    .octicon-font();
+    font-family: 'Octicons Regular';
+    src: url("octicons.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 .octicon {
