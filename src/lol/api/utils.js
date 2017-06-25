@@ -8,10 +8,10 @@ function fetch(path) {
   })
 }
 
-function responseHandler(response){
+function responseHandler(response) {
   return Immutable.fromJS(response)
 }
-export default function get(path, options = { requresAPIKey: false, cache: false }) {
+export default function get(path) {
   return async (heroID) => {
     let url = null
     if (typeof path === 'function') {
@@ -19,18 +19,17 @@ export default function get(path, options = { requresAPIKey: false, cache: false
     } else {
       url = path
     }
-    const storage = options.cache
-    if (storage) {
-      if (storage.getItem(heroID)) {
-        const cacheObj = JSON.parse(storage.getItem(heroID))
-        return responseHandler(cacheObj)
-      }
-    }
+    // if (storage) {
+    //   if (storage.getItem(heroID)) {
+    //     const cacheObj = JSON.parse(storage.getItem(heroID))
+    //     return responseHandler(cacheObj)
+    //   }
+    // }
 
     const response = await fetch(url)
-    if (response) {
-      storage.setItem(heroID, JSON.stringify(response))
-    }
+    // if (response) {
+    //   storage.setItem('heroID', JSON.stringify(response))
+    // }
     return responseHandler(response)
   }
 }
