@@ -1,10 +1,10 @@
 import get from './utils'
 
 export default {
-  getTop: get('heroTotal/top.json'),
-  getJungle: get('heroTotal/jungle.json'),
-  getMid: get('heroTotal/mid.json'),
-  getADC: get('heroTotal/adc.json'),
-  getSupport: get('heroTotal/support.json'),
-  getHero: get(heroID => `HeroDetail/${heroID}.json`)
+  loadTop: get('heroTotal/top.json'),
+  loadJungle: get('heroTotal/jungle.json'),
+  loadMid: get('heroTotal/mid.json'),
+  loadADC: get('heroTotal/adc.json'),
+  loadSupport: get('heroTotal/support.json'),
+  loadHero: get(heroID => `HeroDetail/${heroID}.json`)
 }
