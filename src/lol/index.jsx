@@ -1,11 +1,17 @@
 import React from 'react'
 import { render } from 'react-dom'
-import lolApi from './api/lol'
+import { Provider } from 'react-redux'
+
+import RouterMap from './router/RouterMap'
+import { configStore } from './store'
 import './res/index.less'
 
+const store = configStore()
+
 render(
-  <h1>Hello World</h1>,
+  <Provider store={store}>
+    <RouterMap />
+  </Provider>,
   document.getElementById('lolMountPoint')
 )
 
-lolApi.getADC()
