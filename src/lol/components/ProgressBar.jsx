@@ -14,8 +14,7 @@ class ProgressBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      percent: 0,
-      isLoading: false
+      percent: 0
     }
     this.timer = 0
     this.clearTimer = this.clearTimer.bind(this)

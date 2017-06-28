@@ -24,7 +24,8 @@ class AppHeader extends React.PureComponent {
   render() {
     return (
       <div className={cn('app-header', { translucent: this.state.translucent })}>
-        <div className="app-header-icon" />
+        <div className="app-header-icon float-left" />
+        <div className="app-header-slogon float-left" />
       </div>
     )
   }
