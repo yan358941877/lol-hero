@@ -18,7 +18,7 @@ export default store => next => (action) => {
     const index = loadingActions.indexOf(action.type)
     if (index !== -1) {
       loadingActions.splice(index, 1)
-      if (loadingActions.length === 0 && store.getState.getIn(['status', 'isLoading'])) {
+      if (loadingActions.length === 0 && store.getState().getIn(['status', 'isLoading'])) {
         store.dispatch(actionCreators.loadComplete())
       }
     }

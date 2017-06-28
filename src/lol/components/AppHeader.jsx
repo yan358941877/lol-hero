@@ -4,7 +4,7 @@ import cn from 'classnames'
 import '../res/AppHeader.less'
 
 class AppHeader extends React.PureComponent {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       translucent: true
