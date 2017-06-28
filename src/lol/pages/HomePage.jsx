@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 
 import modelActionCreators from '../actions/model-action-creators'
 
+import AllPosiContainer from '../containers/AllPosiContainer'
+
 class HomePage extends React.Component {
   static propTypes = {
     models: PropTypes.objectOf(Immutable.Map).isRequired,
@@ -26,8 +28,17 @@ class HomePage extends React.Component {
     this.props.actions.loadSupport()
   }
   render() {
+    const models = Immutable.Map({
+      top: this.props.models.get('top'),
+      jungle: this.props.models.get('junble'),
+      mid: this.props.models.get('mid'),
+      adc: this.props.models.get('adc'),
+      support: this.props.models.get('support')
+    })
     return (
-      <div>HomePage</div>
+      <div className="home-page">
+        <AllPosiContainer models={models} />
+      </div>
     )
   }
 }

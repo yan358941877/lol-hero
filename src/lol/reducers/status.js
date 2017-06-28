@@ -9,9 +9,9 @@ const initialState = Immutable.fromJS({
 
 export default handleActions({
   [actionCreators.loading](state) {
-    return state.set('isLoading', false)
+    return state.set('isLoading', true)
   },
   [actionCreators.loadComplete](state) {
-    return state.set('isLoading', true)
+    return state.set('isLoading', false)
   }
 }, initialState)
