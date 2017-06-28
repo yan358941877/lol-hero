@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function AppFooter(){
+import '../res/AppFooter.less'
+
+export default function AppFooter() {
   return (
     <div className="app-footer">
-      <h1>App Footer</h1>
+      <div className="float-left copyright">&copy;2017-2018 Designed and Implemented by Yan Xin</div>
+      <a className="float-right github">Star for me</a>
     </div>
   )
 }

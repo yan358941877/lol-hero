@@ -1,5 +1,6 @@
-@import '../../vendor/octicons/utf-codes.less';
-@import './variables.less';
+@import './octicons/index';
+@import 'variables';
+@import 'reset';
 
 body {
   background-color: @body-bg;
@@ -8,3 +9,18 @@ h1 {
   font-size: 30px;
   color: #fff;
 }
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear-fix:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
