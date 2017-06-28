@@ -1,0 +1,26 @@
+@import url('./variables.less');
+
+.app-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: @app-header-height;
+  padding-left: @app-padding;
+  z-index: 999998;
+  transition: background 0.4s;
+
+  &.translucent {
+    background: rgba(0,0,0,0.92);
+    box-shadow: 0 0 20px 20px rgba(0,0,0,0.4);
+  }
+  .app-header-icon {
+    height: 100%;
+    width: 190px;
+    padding-left: 10px;
+    background-image: url("./image/spr-v2.png");
+    background-repeat: no-repeat;
+    background-position: 0% 11%;
+    cursor: pointer;
+  }
+}
