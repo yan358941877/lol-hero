@@ -15,7 +15,6 @@ function App(props) {
     <div id="app">
       <ProgressBar isLoading={isLoading} />
       <AppHeader />
-      <h1>This is App</h1>
       {props.children}
       <AppFooter />
     </div>

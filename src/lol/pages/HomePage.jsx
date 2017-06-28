@@ -35,9 +35,10 @@ class HomePage extends React.Component {
       adc: this.props.models.get('adc'),
       support: this.props.models.get('support')
     })
+    //console.log(this.props.models.getIn(['top','heros',1,'title']))
     return (
       <div className="home-page">
-        <AllPosiContainer models={models} />
+        <AllPosiContainer models={this.props.models} />
       </div>
     )
   }
