@@ -20,8 +20,8 @@ import '../res/one-posi-row.less'
 
 export default function OnePosiRow(props) {
   return (
-    <div className="app-row">
-      <h2 className={cn({ selected: props.hasSelection })}>{props.title}</h2>
+    <div className={cn('app-row', { selected: props.hasSelection })}>
+      <h2 >{props.title}</h2>
       {props.children}
     </div>
   )

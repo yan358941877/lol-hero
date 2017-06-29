@@ -1,25 +1,28 @@
 @import './octicons/utf-codes';
 @import 'variables';
-
 .app-row {
-  h2.selected {
-    color: #e6bf5a;
-    &:after {
-      content: '@{chevron-right}';
-      font-family: 'Octicons Regular';
-      display: inline-block;
-      margin-left: 5px;
-      font-size: 20px;
+    &.selected {
+        h2 {
+            color: #e6bf5a;
+            &:after {
+                content: '@{chevron-right}';
+                font-family: 'Octicons Regular';
+                display: inline-block;
+                margin-left: 5px;
+                font-size: 20px;
+            }
+        }
     }
-  }
-  h2:hover {
-    color: #e6bf5a;
-    &:after {
-      content: '@{chevron-right}';
-      font-family: 'Octicons Regular';
-      display: inline-block;
-      margin-left: 5px;
-      font-size: 20px;
+    &:hover {
+        h2 {
+            color: #e6bf5a;
+            &:after {
+                content: '@{chevron-right}';
+                font-family: 'Octicons Regular';
+                display: inline-block;
+                margin-left: 5px;
+                font-size: 20px;
+            }
+        }
     }
-  }
 }
