@@ -10,7 +10,7 @@
     {
       "url": "url(\"http://yz.lol.qq.com/v1/assets/images/champion/splash/Jinx_0.jpg\")",
       "position": "74.1564% 11.4365%",
-      "name": "暴走萝莉",
+      "title": "暴走萝莉",
       "area": "祖安"
     },
   	{
@@ -118,7 +118,7 @@
     {
       "url": "url(\"http://yz.lol.qq.com/v1/assets/images/champion/splash/Kindred_0.jpg\")",
       "position": "80.9053% 30.6834%",
-      "name": "永猎双子",
+      "title": "永猎双子",
       "area": "符文之地"
     }
   ]
