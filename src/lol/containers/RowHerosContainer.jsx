@@ -7,7 +7,7 @@ import actionCreators from '../actions/hero-action-creators'
 const mapStateToProps = state => ({ selectedHero: state.getIn(['hero', 'selectedHero']) })
 const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: {
-    selectedHero(heroID) {
+    selectHero(heroID) {
       dispatch(actionCreators.selectedHero({ heroID, position: ownProps.position }))
       if (heroID) {
         dispatch(actionCreators.loadHero(heroID))

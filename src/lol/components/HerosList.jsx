@@ -12,23 +12,36 @@ class HerosList extends React.Component {
     position: PropTypes.string.isRequired,
     selectedHero: PropTypes.objectOf(Immutable.Map),
     actions: PropTypes.shape({
-      selectedHero: PropTypes.func.isRequired
+      selectHero: PropTypes.func.isRequired
     }).isRequired
   }
   static defaultProps = {
     selectedHero: null
   }
   render() {
-    const heroCovers = this.props.heros.map((hero, index) => {
+    const heroCovers = this.props.heros.map((hero) => {
       const title = hero.get('title')
+      const imgPos = hero.get('position')
+      const area = hero.get('area')
+      const url = hero.get('url')
+      const startIndex = url.lastIndexOf('/')
+      const endIndex = url.indexOf('_')
+      const heroID = url.slice(startIndex + 1, endIndex)
       return (
-        <HeroCover key={title} hero={hero} />
+        <HeroCover
+          key={title}
+          hero={{ title, imgPos, url, area, heroID }}
+          position={this.props.position}
+          hasSelection={this.props.hasSelection}
+          selectedHero={this.props.selectedHero}
+          selectAction={this.props.actions.selectHero}
+        />
       )
     }).toArray()
     return (
       <div className="hero-carousel">
         <div className="all-hero-covers">
-          <ul>
+          <ul className="clear-fix">
             {heroCovers}
           </ul>
         </div>
