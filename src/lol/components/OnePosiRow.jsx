@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import '../res/one-posi-row.less'
+import '../res/OnePosiRow.less'
 
 // class OnePosiRow extends React.Component {
 //   static
@@ -21,8 +21,18 @@ import '../res/one-posi-row.less'
 export default function OnePosiRow(props) {
   return (
     <div className={cn('app-row', { selected: props.hasSelection })}>
-      <h2 >{props.title}</h2>
-      {props.children}
+      <div className="row-head">
+        <h2 >{props.title}</h2>
+      </div>
+      <div className="row-carousel">
+        <div className="carousel-btn btn-previous">
+          <i className="octicon icon-chevron-left" />
+        </div>
+        {props.children}
+        <div className="carousel-btn btn-next">
+          <i className="octicon icon-chevron-right" />
+        </div>
+      </div>
     </div>
   )
 }

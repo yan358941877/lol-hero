@@ -5,7 +5,7 @@ import Immutable from 'immutable'
 
 import HeroCover from './HeroCover'
 
-import '../res/heros-list.less'
+import '../res/HerosList.less'
 
 class HerosList extends React.Component {
   static propTypes = {
@@ -41,15 +41,9 @@ class HerosList extends React.Component {
       )
     }).toArray()
     return (
-      <div className={cn('hero-carousel', this.props.position)} >
-        <div className="all-hero-covers">
-          <ul ref={(carousel) => { this.carousel = carousel }}>
-            {heroCovers}
-          </ul>
-        </div>
-        <div className="carousel-btn btn-previous" />
-        <div className="carousel-btn btn-next" />
-      </div>
+      <ul className="hero-carousel">
+        {heroCovers}
+      </ul>
     )
   }
 }
