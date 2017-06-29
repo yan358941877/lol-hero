@@ -24,11 +24,13 @@ export default function OnePosiRow(props) {
       <div className="row-head">
         <h2 >{props.title}</h2>
       </div>
-      <div className="row-carousel">
+      <div className="row-content">
         <div className="carousel-btn btn-previous">
           <i className="octicon icon-chevron-left" />
         </div>
-        {props.children}
+        <div className="row-carousel">
+          {props.children}
+        </div>
         <div className="carousel-btn btn-next">
           <i className="octicon icon-chevron-right" />
         </div>

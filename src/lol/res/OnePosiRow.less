@@ -9,7 +9,7 @@
         transition: opacity 0.4s;
       }
     }
-    .row-carousel .carousel-btn {
+    .row-content .carousel-btn {
       opacity: 1;
       transition: opacity 0.4s;
     }
@@ -26,9 +26,9 @@
       font-size: 20px;
     }
   }
-  .row-carousel {
+  .row-content {
     position: relative;
-
+    margin-bottom: 40px;
     .carousel-btn {
       opacity: 0;
       position: absolute;
@@ -64,8 +64,13 @@
           transform: translate(-50%,-50%);
           font-size: 50px;
           color: #e6bf5a;
+          cursor: pointer;
         }
       }
+    }
+
+    .row-carousel {
+      transform: translateX(-500px);
     }
   }
 
