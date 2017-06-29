@@ -11,9 +11,9 @@ const initialState = Immutable.fromJS({
 export default handleActions({
   [actionCreators.selectHero](state, { payload: selection }) {
     if (selection) {
-      const { hero, position } = selection
+      const { heroID, position } = selection
       return state.merge({
-        selectedHero: hero,
+        selectedHero: heroID,
         selectedPosition: position
       })
     }
