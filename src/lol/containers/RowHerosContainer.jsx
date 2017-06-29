@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Immutable from 'immutable'
 import HerosCovers from '../components/HerosCovers'
 import actionCreators from '../actions/hero-action-creators'
 
