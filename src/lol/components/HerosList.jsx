@@ -43,10 +43,12 @@ class HerosList extends React.Component {
     return (
       <div className={cn('hero-carousel', this.props.position)} >
         <div className="all-hero-covers">
-          <ul>
+          <ul ref={(carousel) => { this.carousel = carousel }}>
             {heroCovers}
           </ul>
         </div>
+        <div className="carousel-btn btn-previous" />
+        <div className="carousel-btn btn-next" />
       </div>
     )
   }
