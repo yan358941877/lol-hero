@@ -24,7 +24,7 @@ class AppHeader extends React.PureComponent {
     $(document).on('scroll', this.throttle(this.checkScroll, 50))
   }
   checkScroll() {
-    console.log('aaa')
+    //console.log('aaa')
     const translucent = document.body.scrollTop > 25
     if (this.state.translucent !== translucent) {
       this.setState({

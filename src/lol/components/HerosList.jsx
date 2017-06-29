@@ -31,7 +31,7 @@ class HerosList extends React.Component {
       const heroID = url.slice(startIndex + 1, endIndex)
       return (
         <HeroCover
-          key={title}
+          key={title + area}
           hero={{ title, imgPos, url, area, heroID }}
           position={this.props.position}
           hasSelection={this.props.hasSelection}
