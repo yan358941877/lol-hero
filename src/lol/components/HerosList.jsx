@@ -5,6 +5,8 @@ import Immutable from 'immutable'
 
 import HeroCover from './HeroCover'
 
+import '../res/heros-list.less'
+
 class HerosList extends React.Component {
   static propTypes = {
     heros: PropTypes.objectOf(Immutable.List).isRequired,
@@ -39,9 +41,9 @@ class HerosList extends React.Component {
       )
     }).toArray()
     return (
-      <div className="hero-carousel">
+      <div className={cn('hero-carousel', this.props.position)} >
         <div className="all-hero-covers">
-          <ul className="clear-fix">
+          <ul>
             {heroCovers}
           </ul>
         </div>
