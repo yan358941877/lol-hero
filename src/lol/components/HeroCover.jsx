@@ -1,13 +1,46 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Immutable from 'immutable'
 
-import '../res/hero-cover.less'
+import '../res/HeroCover.less'
 
 class HeroCover extends React.Component {
+  static propTypes = {
+    hasSelection: PropTypes.bool.isRequired,
+    position: PropTypes.string.isRequired,
+    selectedHero: PropTypes.objectOf(Immutable.Map),
+    selectAction: PropTypes.func.isRequired,
+    hero: PropTypes.object.isRequired
+  }
+  static defaultProps = {
+    selectedHero: Immutable.fromJS({})
+  }
+  constructor(props) {
+    super(props)
+    this.handleSelectHero = this.handleSelectHero.bind(this)
+  }
+  handleSelectHero() {
+    if (this.props.selectAction) {
+      const heroID = this.props.hero.heroID
+      console.log(heroID)
+      this.props.selectAction(heroID)
+    }
+  }
   render() {
-    const url = this.props.hero.url
-    const imgPos = this.props.hero.imgPos
+    const { area, heroID, imgPos, title, url } = this.props.hero
     return (
-      <li className="hero-cover" style={{ backgroundImage: url, backgroundPosition: imgPos }} />
+      <li
+        className="hero-cover"
+        style={{ backgroundImage: url, backgroundPosition: imgPos }}
+        onClick={this.handleSelectHero}
+      >
+        <div className="hero-cover-info">
+          <div className="simple-info">
+            <p className="hero-title">{title}</p>
+            <p className="hero-area">{area}</p>
+          </div>
+        </div>
+      </li>
     )
   }
 }

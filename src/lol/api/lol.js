@@ -6,5 +6,5 @@ export default {
   loadMid: get('heroTotal/mid.json'),
   loadADC: get('heroTotal/adc.json'),
   loadSupport: get('heroTotal/support.json'),
-  loadHero: get(heroID => `HeroDetail/${heroID}.json`)
+  loadHero: get(heroID => `heroDetail/${heroID}.json`)
 }

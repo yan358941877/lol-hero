@@ -17,9 +17,6 @@ class HerosList extends React.Component {
       selectHero: PropTypes.func.isRequired
     }).isRequired
   }
-  static defaultProps = {
-    selectedHero: null
-  }
   render() {
     const heroCovers = this.props.heros.map((hero) => {
       const title = hero.get('title')
@@ -29,6 +26,7 @@ class HerosList extends React.Component {
       const startIndex = url.lastIndexOf('/')
       const endIndex = url.indexOf('_')
       const heroID = url.slice(startIndex + 1, endIndex)
+
       return (
         <HeroCover
           key={title + area}

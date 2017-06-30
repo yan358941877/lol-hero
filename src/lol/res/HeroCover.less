@@ -1,0 +1,42 @@
+@import 'variables';
+.hero-cover {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  list-style: none;
+  width: 260px;
+  height: 380px;
+  margin: 0 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+
+  .hero-cover-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    font-size: 14px;
+
+    .simple-info {
+      text-align: center;
+      padding: 15px 0;
+      border-top: 1px solid @border-color;
+      .hero-area {
+        color: @border-color;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  &:hover {
+    width: 280px;
+    margin: 0 -5px;
+    margin-top: -20px;
+    height: 420px;
+    border: 2px solid @border-color;
+  }
+}
