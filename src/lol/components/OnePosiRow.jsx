@@ -36,8 +36,8 @@ class OnePosiRow extends React.Component {
   handleClickPre() {
     if (this.carousel) {
       let offset = this.getOffSet()
-      offset += 245 * 4
-      offset = offset > -40 ? 0 : offset
+      offset += 900
+      offset = offset >= -40 ? 0 : offset
       this.setOffSet(offset)
     }
   }
@@ -47,7 +47,7 @@ class OnePosiRow extends React.Component {
       const maxOffSet = this.carousel.scrollWidth
       let offset = this.getOffSet()
       offset = offset > -40 ? -40 : offset
-      offset -= 243 * 5
+      offset -= 900
       if (offset < (containerWidth - maxOffSet)) {
         offset = containerWidth - maxOffSet
       }
