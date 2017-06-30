@@ -30,13 +30,14 @@ class AllPosiContainer extends React.Component{
       // console.log(model.get('heros'))
       const title = positionType[key]
       const hasSelection = key === selectedPosition
-
+      const count = model.get('count')
       return (
         <OnePosiRow
           hasSelection={hasSelection}
           key={key}
           title={title}
           position={key}
+          count={model.get('count')}
         >
           <RowHerosContainer
             heros={model.get('heros')}
