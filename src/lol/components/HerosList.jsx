@@ -11,7 +11,6 @@ class HerosList extends React.Component {
   static propTypes = {
     heros: PropTypes.objectOf(Immutable.List).isRequired,
     hasSelection: PropTypes.bool.isRequired,
-    position: PropTypes.string.isRequired,
     selectedHero: PropTypes.objectOf(Immutable.Map),
     actions: PropTypes.shape({
       selectHero: PropTypes.func.isRequired
@@ -48,7 +47,6 @@ class HerosList extends React.Component {
         <HeroCover
           key={title + area}
           hero={{ title, imgPos, url, area, heroID }}
-          position={this.props.position}
           hasSelection={this.props.hasSelection}
           selectedHero={this.props.selectedHero}
           selectAction={this.props.actions.selectHero}

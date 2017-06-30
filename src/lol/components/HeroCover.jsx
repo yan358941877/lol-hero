@@ -8,7 +8,6 @@ import '../res/HeroCover.less'
 class HeroCover extends React.Component {
   static propTypes = {
     hasSelection: PropTypes.bool.isRequired,
-    position: PropTypes.string.isRequired,
     selectedHero: PropTypes.objectOf(Immutable.Map),
     selectAction: PropTypes.func.isRequired,
     hero: PropTypes.object.isRequired
