@@ -22,8 +22,9 @@ class HeroCover extends React.Component {
   handleSelectHero() {
     if (this.props.selectAction) {
       const heroID = this.props.hero.heroID
-      console.log(heroID)
       this.props.selectAction(heroID)
+      const offsetTop = $(this.item).offset().top - 80
+      $(document.body).scrollTop(offsetTop)
     }
   }
   render() {
@@ -33,6 +34,7 @@ class HeroCover extends React.Component {
         className="hero-cover"
         style={{ backgroundImage: url, backgroundPosition: imgPos }}
         onClick={this.handleSelectHero}
+        ref={(item) => { this.item = item }}
       >
         <div className="hero-cover-info">
           <div className="simple-info">
