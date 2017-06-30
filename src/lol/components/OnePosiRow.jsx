@@ -19,26 +19,39 @@ class OnePosiRow extends React.Component {
   }
   constructor(props) {
     super(props)
-    this.offset = -40
     this.handleClickPre = this.handleClickPre.bind(this)
     this.handleClickBack = this.handleClickBack.bind(this)
   }
+  componentDidMount() {
+    this.carousel.style.transform = 'translateX(0px)'
+  }
+  getOffSet() {
+    const translate = this.carousel.style.transform
+    const offset = parseInt(translate.match(/([-\d]+)/)[0], 0)
+    return offset
+  }
+  setOffSet(offset) {
+    this.carousel.style.transform = `translateX(${offset}px)`
+  }
   handleClickPre() {
     if (this.carousel) {
-      this.offset += 243 * 5
-      this.offset = this.offset >= -40 ? 0 : this.offset
-      this.carousel.style.transform = `translateX(${this.offset}px)`
+      let offset = this.getOffSet()
+      offset += 245 * 4
+      offset = offset > -40 ? 0 : offset
+      this.setOffSet(offset)
     }
   }
   handleClickBack() {
     if (this.carousel) {
-      const containerWidth = this.carousel.parentElement.clientWidth
-      this.offset = this.offset > -40 ? -40 : this.offset
-      this.offset -= 243 * 5
-      if (this.offset < (containerWidth - (this.props.count * 243) - 40)) {
-        this.offset = containerWidth - (this.props.count * 243) - 40
+      const containerWidth = this.carousel.offsetWidth
+      const maxOffSet = this.carousel.scrollWidth
+      let offset = this.getOffSet()
+      offset = offset > -40 ? -40 : offset
+      offset -= 243 * 5
+      if (offset < (containerWidth - maxOffSet)) {
+        offset = containerWidth - maxOffSet
       }
-      this.carousel.style.transform = `translateX(${this.offset}px)`
+      this.setOffSet(offset)
     }
   }
   render() {
