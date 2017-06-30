@@ -32,11 +32,25 @@
       }
     }
   }
-  &:hover {
+  &:hover,&.selected {
     width: 280px;
     margin: 0 -5px;
     margin-top: -20px;
     height: 420px;
     border: 2px solid @border-color;
+
+    .mask {
+      display: none;
+    }
+  }
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &.no-selected.has-selection {
+      background: rgba(0,0,0,0.5);
+    }
   }
 }

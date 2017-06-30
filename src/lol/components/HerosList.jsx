@@ -17,6 +17,23 @@ class HerosList extends React.Component {
       selectHero: PropTypes.func.isRequired
     }).isRequired
   }
+  static defaultProps = {
+    selectedHero: Immutable.fromJS({})
+  }
+  shouldComponentUpdate(nextProps) {
+    let shouldUpdate = false
+    if (nextProps.hasSelection !== this.props.hasSelection) {
+      shouldUpdate = true
+    } else if (nextProps.selectedHero !== this.props.selectedHero) {
+      shouldUpdate = true
+    }
+
+    if (nextProps.heros !== this.props.heros) {
+      shouldUpdate = true
+    }
+
+    return shouldUpdate
+  }
   render() {
     const heroCovers = this.props.heros.map((hero) => {
       const title = hero.get('title')

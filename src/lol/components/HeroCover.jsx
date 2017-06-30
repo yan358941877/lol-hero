@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Immutable from 'immutable'
+import cn from 'classnames'
 
 import '../res/HeroCover.less'
 
@@ -29,9 +30,14 @@ class HeroCover extends React.Component {
   }
   render() {
     const { area, heroID, imgPos, title, url } = this.props.hero
+    let isSelected = false
+    if (this.props.selectedHero) {
+      const selectedID = this.props.selectedHero.getIn(['data', 'id'])
+      isSelected = selectedID.toLowerCase() === heroID.toLowerCase()
+    }
     return (
       <li
-        className="hero-cover"
+        className={cn('hero-cover', { selected: isSelected })}
         style={{ backgroundImage: url, backgroundPosition: imgPos }}
         onClick={this.handleSelectHero}
         ref={(item) => { this.item = item }}
@@ -42,6 +48,7 @@ class HeroCover extends React.Component {
             <p className="hero-area">{area}</p>
           </div>
         </div>
+        <div className={cn('mask', { 'no-selected': !isSelected }, { 'has-selection': this.props.hasSelection })} />
       </li>
     )
   }
