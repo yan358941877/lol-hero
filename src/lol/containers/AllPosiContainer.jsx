@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 import OnePosiRow from '../components/OnePosiRow'
 import RowHerosContainer from '../containers/RowHerosContainer'
+import Jumbotron from '../components/Jumbotron'
 
 import '../res/all-posi-container.less'
 
