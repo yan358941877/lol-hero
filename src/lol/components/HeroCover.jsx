@@ -19,16 +19,20 @@ class HeroCover extends React.Component {
     super(props)
     this.handleSelectHero = this.handleSelectHero.bind(this)
   }
+
   handleSelectHero() {
+    const heroID = this.props.hero.heroID
+    if (this.checkSelected(heroID)) {
+      this.props.selectAction('')
+      return
+    }
     if (this.props.selectAction) {
-      const heroID = this.props.hero.heroID
       this.props.selectAction(heroID)
       const offsetTop = $(this.item).offset().top - 80
       $(document.body).scrollTop(offsetTop)
     }
   }
-  render() {
-    const { area, heroID, imgPos, title, url } = this.props.hero
+  checkSelected(heroID) {
     let isSelected = false
     if (this.props.selectedHero) {
       const selectedID = this.props.selectedHero.getIn(['data', 'id'])
@@ -38,6 +42,11 @@ class HeroCover extends React.Component {
         isSelected = false
       }
     }
+    return isSelected
+  }
+  render() {
+    const { area, heroID, imgPos, title, url } = this.props.hero
+    const isSelected = this.checkSelected(heroID)
     return (
       <li
         className={cn('hero-cover', { selected: isSelected })}

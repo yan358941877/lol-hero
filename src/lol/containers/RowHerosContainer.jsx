@@ -7,9 +7,11 @@ const mapStateToProps = state => ({ selectedHero: state.getIn(['hero', 'selected
 const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: {
     selectHero(heroID) {
-      dispatch(actionCreators.selectHero({ heroID: { heroID }, position: ownProps.position }))
       if (heroID) {
         dispatch(actionCreators.loadHero(heroID))
+        dispatch(actionCreators.selectHero({ heroID: { heroID }, position: ownProps.position }))
+      } else {
+        dispatch(actionCreators.selectHero({ heroID: { heroID }, position: '' }))
       }
     }
   }
