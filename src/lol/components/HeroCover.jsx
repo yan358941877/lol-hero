@@ -29,7 +29,12 @@ class HeroCover extends React.Component {
     if (this.props.selectAction) {
       this.props.selectAction(heroID)
       const offsetTop = $(this.item).offset().top - 80
-      $(document.body).scrollTop(offsetTop)
+      //$(document.body).scrollTop(offsetTop)
+      setTimeout(() => {
+        $(document.body).animate({
+          scrollTop: offsetTop
+        }, 250);
+      }, 400);
     }
   }
   checkSelected(heroID) {
