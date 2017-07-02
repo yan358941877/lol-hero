@@ -2,10 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Immutable from 'immutable'
 import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
 
 import OnePosiRow from '../components/OnePosiRow'
 import RowHerosContainer from '../containers/RowHerosContainer'
 import Jumbotron from '../components/Jumbotron'
+import PopupPage from '../components/PopupPage'
+
+import actionCreators from '../actions/hero-action-creators'
 
 import '../res/all-posi-container.less'
 
@@ -20,7 +24,8 @@ const positionType = {
 class AllPosiContainer extends React.Component{
   static propTypes = {
     hero: PropTypes.objectOf(Immutable.Map).isRequired,
-    models: PropTypes.objectOf(Immutable.Map).isRequired
+    models: PropTypes.objectOf(Immutable.Map).isRequired,
+    close: PropTypes.func.isRequired
   }
 
   render() {
@@ -31,12 +36,18 @@ class AllPosiContainer extends React.Component{
       // console.log(model.get('heros'))
       const title = positionType[key]
       const hasSelection = key === selectedPosition
+      const detailBar = hasSelection ? (
+        <PopupPage close={this.props.close}>
+          <Jumbotron />
+        </PopupPage>
+      ) : null
       return (
         <OnePosiRow
           hasSelection={hasSelection}
           key={key}
           title={title}
           count={model.get('count')}
+          detailBar={detailBar}
         >
           <RowHerosContainer
             heros={model.get('heros')}
@@ -56,5 +67,9 @@ class AllPosiContainer extends React.Component{
 }
 
 const mapStateToProps = state => ({ hero: state.get('hero') })
-
-export default connect(mapStateToProps)(AllPosiContainer)
+const mapDispatchToProps = dispatch => ({
+  close: () => {
+    dispatch(actionCreators.selectHero({ heroID: null, position: null }))
+  }
+})
+export default connect(mapStateToProps, mapDispatchToProps)(AllPosiContainer)

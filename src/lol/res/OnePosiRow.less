@@ -75,4 +75,25 @@
     }
   }
 
+  .detail-bar-transition-enter {
+    transition: all 0.4s;
+    transform: rotateX(-30deg);
+    transform-origin: top center;
+    opacity: 0;
+  }
+  .detail-bar-transition-enter-active {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+
+  .detail-bar-transition-leave {
+    transition: all 0.25s;
+    transform: rotateX(0);
+    transform-origin: top center;
+    opacity: 1;
+  }
+  .detail-bar-transition-leave-active {
+    opacity: 0;
+    transform: rotateX(-30deg);
+  }
 }

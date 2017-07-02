@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         dispatch(actionCreators.loadHero(heroID))
         dispatch(actionCreators.selectHero({ heroID: { heroID }, position: ownProps.position }))
       } else {
-        dispatch(actionCreators.selectHero({ heroID: { heroID }, position: '' }))
+        dispatch(actionCreators.selectHero({ heroID: null, position: null }))
       }
     }
   }

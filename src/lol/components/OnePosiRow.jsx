@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 import '../res/OnePosiRow.less'
 
@@ -71,6 +73,13 @@ class OnePosiRow extends React.Component {
             <i className="octicon icon-chevron-right" />
           </div>
         </div>
+        <ReactCSSTransitionGroup
+          transitionName="detail-bar-transition"
+          transitionEnterTimeout={400}
+          transitionLeaveTimeout={300}
+        >
+          {this.props.detailBar}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
