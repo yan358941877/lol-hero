@@ -32,7 +32,11 @@ class HeroCover extends React.Component {
     let isSelected = false
     if (this.props.selectedHero) {
       const selectedID = this.props.selectedHero.getIn(['data', 'id'])
-      isSelected = selectedID.toLowerCase() === heroID.toLowerCase()
+      try {
+        isSelected = selectedID.toLowerCase() === heroID.toLowerCase()
+      } catch (error) {
+        isSelected = false
+      }
     }
     return (
       <li
