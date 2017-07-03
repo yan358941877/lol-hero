@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 import OnePosiRow from '../components/OnePosiRow'
 import RowHerosContainer from '../containers/RowHerosContainer'
-import Jumbotron from '../components/Jumbotron'
+import JumbotronContainer from '../containers/JumbotronContainer'
 import PopupPage from '../components/PopupPage'
 
 import actionCreators from '../actions/hero-action-creators'
@@ -21,7 +21,7 @@ const positionType = {
   support: 'SUPPORT 辅助'
 }
 
-class AllPosiContainer extends React.Component{
+class AllPosiContainer extends React.Component {
   static propTypes = {
     hero: PropTypes.objectOf(Immutable.Map).isRequired,
     models: PropTypes.objectOf(Immutable.Map).isRequired,
@@ -38,7 +38,7 @@ class AllPosiContainer extends React.Component{
       const hasSelection = key === selectedPosition
       const detailBar = hasSelection ? (
         <PopupPage close={this.props.close}>
-          <Jumbotron />
+          <JumbotronContainer />
         </PopupPage>
       ) : null
       return (
