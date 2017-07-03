@@ -3,7 +3,9 @@ import React from 'react'
 class Tab extends React.Component {
   render(){
     return (
-      <h4>aaaaaaaa</h4>
+      <div className="Tab">
+        <p>This is {this.props.id}</p>
+      </div>
     )
   }
 }
