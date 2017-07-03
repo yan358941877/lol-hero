@@ -16,10 +16,6 @@ class Tabs extends React.Component {
     this.state = {
       selectedTabId: 'hero-info'
     }
-    this.changeTab = this.changeTab.bind(this)
-  }
-  changeTab(id) {
-    console.log(id)
   }
   render() {
     const tabs = []
@@ -35,7 +31,11 @@ class Tabs extends React.Component {
         </li>
       )
       buttons.push(
-        <li className="tab-items" key={id} onClick={() => { this.setState({ selectedTabId: id }) }}>
+        <li
+          className={cn('tab-button', { selected: selectedTabId === id })}
+          key={id}
+          onClick={() => { this.setState({ selectedTabId: id }) }}
+        >
           {title}
         </li>
       )
