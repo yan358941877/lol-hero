@@ -39,7 +39,7 @@ class Jumbotron extends React.Component {
         </div>
         <Tabs>
           <Tab id="hero-info" title="背景">
-            <HeroInfo blurb={blurb} tag={tags} attribute={info} />
+            <HeroInfo blurb={blurb} tags={tags} heroAttr={info} />
           </Tab>
           <Tab id="hero-skill" title="技能" >
 

@@ -1,0 +1,44 @@
+@import 'variables';
+.hero-info {
+  box-sizing: content-box;
+  .hero-role span{
+    display: inline-block;
+    padding: 0 0.5em;
+    border: 1px solid @border-color;
+    margin: 0 5px;
+  }
+  .hero-attr {
+    margin-top: 10px;
+    font-size: 14px;
+    .item {
+      margin: 5px;
+      span {
+        display: inline-block;
+        height: 1em;
+        line-height: 1em;
+      }
+      .value-bar {
+        margin-left: 1em;
+        height: 6px;
+        border-radius: 4px;;
+        &.attack {
+          background: #df4706;
+        }
+        &.defense {
+          background: #2C97DE;
+        }
+        &.difficulty{
+          background: #1ECA6B;
+        }
+        &.magic{
+          background: #dc416e;
+        }
+      }
+    }
+  }
+  .hero-backstory {
+    width: 50%;
+    font-size: 14px;
+    margin-top: 1em;
+  }
+}
