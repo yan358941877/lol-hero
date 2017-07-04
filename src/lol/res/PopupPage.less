@@ -7,11 +7,28 @@
   .close-button {
     display: inline-block;
     position: absolute;
+    z-index: 101;
     right: 20px;
     top: 0;
     font-size: 20px;
   }
   .jumbotron-container {
     height: 100%;
+    .jumbotron-fore {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+    }
+    .jumbotron-back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+    }
   }
 }
