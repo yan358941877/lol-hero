@@ -7,6 +7,7 @@ import Tab from './Tab'
 import HeroInfo from './HeroInfo'
 import HeroSlides from './HeroSlides'
 import HeroOperate from './HeroOperate'
+import HeroSkills from './HeroSkills'
 
 import '../res/Jumbotron.less'
 
@@ -31,7 +32,7 @@ class Jumbotron extends React.Component {
     if (!data) {
       return null
     }
-    const { name, title, blurb, tags, info, skins, allytips, enemytips } = data.toJS()
+    const { name, title, blurb, tags, info, skins, allytips, enemytips, passive, spells } = data.toJS()
 
     return (
       <div className="jumbotron">
@@ -44,7 +45,7 @@ class Jumbotron extends React.Component {
               <HeroInfo blurb={blurb} tags={tags} heroAttr={info} />
             </Tab>
             <Tab id="hero-skill" title="技能" >
-
+              <HeroSkills passive={passive} spells={spells} />
             </Tab>
             <Tab id="hero-use" title="操作" >
               <HeroOperate allytips={allytips} enemytips={enemytips} name={name} />
