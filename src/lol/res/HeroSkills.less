@@ -1,3 +1,53 @@
+@import 'variables';
 .hero-skills {
+  padding: 0;
   margin: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#skill-tabs {
+  .skilltab-button {
+    height: 100%;
+    padding: 10px 0 10px 40px;
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    ul li {
+      box-sizing: border-box;
+      list-style: none;
+      display: block;
+      margin: 5px 0;
+      width: 50px;;
+      height: 50px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &.selected {
+        border: 2px solid @border-color;
+      }
+    }
+  }
+  .skilltab-content {
+    width: 50px;
+    height: 100%;
+    padding: 10px 0 10px 40px;
+    margin-left: 30px;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    ul li {
+      list-style: none;
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
+
+  }
 }
