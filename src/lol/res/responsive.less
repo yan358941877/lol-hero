@@ -37,15 +37,28 @@
   }
 }
 
+.lol-detail-size(@factor) {
+  .popup-page {
+    height: 450px * @factor;
+    .tab-button {
+      font-size: 24px * @factor;
+    }
+  }
+
+}
+
 
 @media (min-width: 1920px) {
   .lol-hero-cover-size(1);
+  .lol-detail-size(1);
 }
 
 @media (max-width: 1920px) {
-  .lol-hero-cover-size(1)
+  .lol-hero-cover-size(1);
+  .lol-detail-size(1);
 }
 
 @media (max-width: 1600px) {
   .lol-hero-cover-size(1600/1920);
+  .lol-detail-size(1600/1920);
 }
