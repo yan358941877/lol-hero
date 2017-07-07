@@ -1,5 +1,14 @@
+@import 'variables';
 #skill-tabs .skilltab-content .skill-tab {
+  overflow-y: auto;
+  &::-webkit-scrollbar {display:none;}
   h3 {
-    margin: 10px 0;
+    display: inline-block;
+    margin: 10px 0 20px 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid @border-color;
+  }
+  p {
+    font-size: 14px;
   }
 }
