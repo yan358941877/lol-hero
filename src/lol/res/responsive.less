@@ -53,18 +53,28 @@
   }
 }
 
+.lol-hero-slides(@factor) {
+  .hero-slides .slides-mask {
+    background-image: linear-gradient(to right, rgba(0,0,0,1) @factor * 60%,rgba(0,0,0,0) @factor * 70%);
+  }
+}
 
 @media (min-width: 1920px) {
   .lol-hero-cover-size(1);
   .lol-detail-size(1);
+  .lol-hero-slides(1)
 }
 
 @media (max-width: 1920px) {
   .lol-hero-cover-size(1);
   .lol-detail-size(1);
+  .lol-hero-slides(1)
 }
 
 @media (max-width: 1600px) {
   .lol-hero-cover-size(1600/1920);
   .lol-detail-size(1600/1920);
+  .lol-hero-slides(1600/1920);
 }
+
+
