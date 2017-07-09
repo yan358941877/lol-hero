@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 app.use(compression())
-app.use(express.static('public', {
+app.use(express.static('public/', {
   maxAge: '2h'
 }))
 

@@ -8,7 +8,7 @@ import SearchPage from '../pages/SearchPage'
 export default function RouterMao() {
   return (
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/lol" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="/search" component={SearchPage} />
       </Route>
