@@ -14,8 +14,8 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/',
+    path: path.resolve(__dirname, 'public/lol'),
+    publicPath: '/lol/',
     filename: 'assets/js/[name].js'
   },
   devtool: devMode ? 'source-map' : false,
@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff2?)$/,
-        use: ['file-loader?name=assets.fonts/[name].[ext']
+        use: ['file-loader?name=assets/fonts/[name].[ext']
       }
     ]
   },
