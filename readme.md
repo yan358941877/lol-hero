@@ -5,17 +5,17 @@
 
 ## 预览地址
 
-[点击进入][http://yanxinxin.cn/lol/]
+[点击进入](http://yanxinxin.cn/lol/)
 
 ## 部分效果截图
 
 ### 整体效果
 
-![整体效果][/screen-shoot/lol-01.gif]
+![整体效果](/screen-shoot/lol-01.gif)
 
 ### 具体英雄
 
-![具体英雄][/screen-shoot/lol-02.gif]
+![具体英雄](/screen-shoot/lol-02.gif)
 
 ## 工具&技能
 
@@ -45,7 +45,7 @@ npm run build
 
 ## 支持
 
-Github项目地址: [https://github.com/yan358941877/lol-hero/][https://github.com/yan358941877/lol-hero/]
+Github项目地址: [https://github.com/yan358941877/lol-hero/](https://github.com/yan358941877/lol-hero/)
 欢迎issue,star or follow!我会继续开源更多有趣的项目
 
 
