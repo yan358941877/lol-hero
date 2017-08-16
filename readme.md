@@ -3,6 +3,16 @@
 这段时间一直在学习React和Redux的相关内容，这个是项目是我使用 React 技术栈构建英雄联盟英雄背景、英雄皮肤、技能说明、使用技巧展示的单页应用。这是我的Github项目地址: https://github.com/yan358941877/lol-hero/
 欢迎issue,star or follow!我会继续开源更多有趣的项目
 
+## 项目介绍
+
+* 使用 Python 和 Beautiful Soup 爬取英雄联盟游戏中各英雄的相关数据
+* 使用 React 来构建展示页面
+* 使用 Redux 来进行状态管理
+* 使用 redux-promise 中间件来处理异步流
+* 使用 ReactCSSTransitionGroup、 classnames、 CSS 来实现动态效果
+* 在开发过程中使用 ESLint 进行代码风格检测
+* 使用 Express 来提供后端支持
+
 ## 预览地址
 
 [点击进入](http://yanxinxin.cn/lol/)
@@ -19,14 +29,14 @@
 
 ## 工具&技能
 
-* react
-* redux、redux-promise、middleware
-* react-router
-* immutable
-* eslint
-* less
+* Python、Beautiful Soup
+* React
+* Redux、redux-promise、middleware
+* Immutable
+* Eslint
+* Less
 * webpack
-* express
+* Express
 
 ## 使用
 
