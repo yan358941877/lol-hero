@@ -25,6 +25,29 @@ App.propTypes = {
   status: PropTypes.objectOf(Immutable.Map).isRequired
 }
 
+// class App extends React.Component {
+//   static propTypes = {
+//     children: PropTypes.element.isRequired,
+//     status: PropTypes.objectOf(Immutable.Map).isRequired
+//   }
+//   constructor(props) {
+//     super(props)
+//     this.props = props
+//     this.state = {
+//       isLoading: this.props.status.get('isLoading')
+//     }
+//   }
+//   render() {
+//     return (
+//       <div id="app">
+//         <ProgressBar isLoading={this.state.isLoading} />
+//         <AppHeader />
+//         {this.props.children}
+//         <AppFooter />
+//       </div>
+//     )
+//   }
+// }
 const mapStateToProps = state => ({ status: state.get('status') })
 
 
