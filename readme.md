@@ -17,7 +17,7 @@
 
 ## 预览地址
 
-[点击进入](http://yanxinxin.cn/lol/)
+[点击进入](https://github.com/yan358941877/lol-hero/)
 
 ## 部分效果截图
 
